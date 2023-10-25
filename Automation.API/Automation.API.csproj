@@ -22,8 +22,4 @@
     <ProjectReference Include="..\Automation.Infrastructure\Automation.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>

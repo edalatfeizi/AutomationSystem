@@ -11,6 +11,6 @@ public class Department
     public Department? Parent { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
-    public DateTime CreatedOn { get; set; }
-    public bool IsActive { get; set; }
+    public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+    public bool IsActive { get; set; } = true;
 }

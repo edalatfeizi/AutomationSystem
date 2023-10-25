@@ -1,4 +1,6 @@
 ﻿
+using Automation.Infrastructure.Repositories;
+
 namespace Automation.Infrastructure.Extensions;
 
 public static class HostingExtensions
@@ -9,6 +11,8 @@ public static class HostingExtensions
         {
             options.UseSqlServer(connectionString);
         });
+
+        services.AddScoped<IDepartmentRepository, DepartmentRepository>();
 
         return services;
     }

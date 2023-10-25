@@ -1,9 +1,11 @@
+using Automation.Domain.Extensions;
 using Automation.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddDomain();
 builder.Services.AddInfrastructure(builder.Configuration.GetConnectionString("DefaultConnection")!);
 
 
