@@ -13,6 +13,7 @@ namespace Automation.Domain.Extensions
         public static IServiceCollection AddDomain(this IServiceCollection services)
         {
             services.AddScoped<IDepartmentService, DepartmentService>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
 
             return services;
         }

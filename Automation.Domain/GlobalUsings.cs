@@ -8,6 +8,7 @@ global using Automation.Domain.Interfaces.Repositories;
 global using Automation.Domain.Interfaces.Services;
 global using Automation.Domain.Resources;
 global using System.Net;
+global using Automation.Domain.Dtos.Request.Employee;
 
 
 

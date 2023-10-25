@@ -120,4 +120,7 @@
   <data name="DepartmentNotFound" xml:space="preserve">
     <value>Department not found.</value>
   </data>
+  <data name="EmployeeNotFound" xml:space="preserve">
+    <value>Employee not found.</value>
+  </data>
 </root>

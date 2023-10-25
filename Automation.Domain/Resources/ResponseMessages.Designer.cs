@@ -68,5 +68,14 @@ namespace Automation.Domain.Resources {
                 return ResourceManager.GetString("DepartmentNotFound", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Employee not found..
+        /// </summary>
+        internal static string EmployeeNotFound {
+            get {
+                return ResourceManager.GetString("EmployeeNotFound", resourceCulture);
+            }
+        }
     }
 }
