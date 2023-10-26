@@ -13,6 +13,7 @@ public static class HostingExtensions
         services.AddScoped<IDepartmentRepository, DepartmentRepository>();
         services.AddScoped<IEmployeeRepository, EmployeeRepository>();
         services.AddScoped<IEmployeeDepartmentRepository, EmployeeDepartmentRepository>();
+        services.AddScoped<IAccountRepository, AccountRepository>();
 
         return services;
     }

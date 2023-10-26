@@ -120,7 +120,22 @@
   <data name="DepartmentNotFound" xml:space="preserve">
     <value>Department not found.</value>
   </data>
+  <data name="EmailAlreadyExist" xml:space="preserve">
+    <value>Email already exist.</value>
+  </data>
   <data name="EmployeeNotFound" xml:space="preserve">
     <value>Employee not found.</value>
+  </data>
+  <data name="ExpiredTokens" xml:space="preserve">
+    <value>Expired tokens.</value>
+  </data>
+  <data name="InternalServerError" xml:space="preserve">
+    <value>Internal server error.</value>
+  </data>
+  <data name="InvalidCredentials" xml:space="preserve">
+    <value>Invalid Credentials.</value>
+  </data>
+  <data name="InvalidTokens" xml:space="preserve">
+    <value>Invalid tokens.</value>
   </data>
 </root>

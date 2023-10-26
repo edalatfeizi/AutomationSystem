@@ -70,11 +70,56 @@ namespace Automation.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email already exist..
+        /// </summary>
+        internal static string EmailAlreadyExist {
+            get {
+                return ResourceManager.GetString("EmailAlreadyExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Employee not found..
         /// </summary>
         internal static string EmployeeNotFound {
             get {
                 return ResourceManager.GetString("EmployeeNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Expired tokens..
+        /// </summary>
+        internal static string ExpiredTokens {
+            get {
+                return ResourceManager.GetString("ExpiredTokens", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Internal server error..
+        /// </summary>
+        internal static string InternalServerError {
+            get {
+                return ResourceManager.GetString("InternalServerError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Credentials..
+        /// </summary>
+        internal static string InvalidCredentials {
+            get {
+                return ResourceManager.GetString("InvalidCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid tokens..
+        /// </summary>
+        internal static string InvalidTokens {
+            get {
+                return ResourceManager.GetString("InvalidTokens", resourceCulture);
             }
         }
     }
