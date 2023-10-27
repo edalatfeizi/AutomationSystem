@@ -13,8 +13,6 @@ public class EmployeeDepartmentRepository : IEmployeeDepartmentRepository
     public async Task<EmployeeDepartment?> GetByEmployeeId(Guid id)
     {
         var employeeDepartment = await _context.EmployeeDepartments.Where(x => x.EmployeeId == id).FirstOrDefaultAsync();
-        if (employeeDepartment == null)
-            return null;
 
         return employeeDepartment;
     }

@@ -26,7 +26,7 @@ public class DepartmentRepository : IDepartmentRepository
 
     public async Task<bool?> DeleteDepartment(Guid id)
     {
-        var department = await _context.Departments.FindAsync(id);
+        var department = await _context.Departments.FirstOrDefaultAsync(x => x.Id == id);
         if (department == null)
             return null;
 
@@ -45,8 +45,6 @@ public class DepartmentRepository : IDepartmentRepository
     public async Task<Department?> GetDepartmentById(Guid id)
     {
         var department = await _context.Departments.FindAsync(id);
-        if (department == null)
-            return null;
 
         return department;
     }

@@ -59,8 +59,6 @@ public class EmployeeRepository : IEmployeeRepository
     public async Task<Employee?> GetById(Guid id)
     {
         var employee = await _context.Employees.FindAsync(id);
-        if (employee == null)
-            return null;
 
         return employee;
     }

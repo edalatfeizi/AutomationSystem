@@ -2,7 +2,7 @@
 
 namespace Automation.Domain.Dtos.Response;
 
-public class RefreshTokenResDto
+public record RefreshTokenResDto
 {
     public Guid UserId { get; set; }
     public string Token { get; set; } = string.Empty;

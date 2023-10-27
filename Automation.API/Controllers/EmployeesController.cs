@@ -6,9 +6,11 @@ namespace Automation.API.Controllers;
 public class EmployeesController : ControllerBase
 {
     private readonly IEmployeeService _service;
-    public EmployeesController(IEmployeeService service)
+    private readonly IAccountService _accountService;
+    public EmployeesController(IEmployeeService service, IAccountService accountService)
     {
         _service = service;
+        _accountService = accountService;
     }
 
     [HttpPost]
@@ -17,6 +19,7 @@ public class EmployeesController : ControllerBase
     public async Task<IActionResult> AddEmployee([FromQuery] Guid departmentId, [FromBody] EmployeeAddReqDto dto)
     {
         var result = await _service.AddEmployee(departmentId, dto);
+        var user = await _accountService.RegisterAsync(new UserRegisterReqDto { Email = dto.Email, Password = "Passw0rd@1" });
         return Ok(result);
     }
 

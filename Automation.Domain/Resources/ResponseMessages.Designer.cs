@@ -61,6 +61,15 @@ namespace Automation.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Attachment not found..
+        /// </summary>
+        internal static string AttachmentNotFound {
+            get {
+                return ResourceManager.GetString("AttachmentNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Department not found..
         /// </summary>
         internal static string DepartmentNotFound {

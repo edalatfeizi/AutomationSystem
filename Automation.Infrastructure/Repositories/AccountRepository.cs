@@ -7,9 +7,7 @@ public class AccountRepository : IAccountRepository
     private readonly AutomationDbContext _context;
     public AccountRepository(AutomationDbContext context)
     {
-
         _context = context;
-
     }
     public async Task<RefreshToken> AddUserRefreshTokenAsync(Guid userId, string token, string jwtId, bool isUsed, bool isRevoked, DateTime addedDate, DateTime expiryDate)
     {
@@ -32,7 +30,7 @@ public class AccountRepository : IAccountRepository
 
     public async Task<bool?> UpdateUserRefreshTokenAsync(Guid id, Guid userId, string token, string jwtId, bool isUsed, bool isRevoked, DateTime addedDate, DateTime expiryDate)
     {
-        var existToken = await _context.RefreshTokens.FindAsync(id);
+        var existToken = await _context.RefreshTokens.FirstOrDefaultAsync(x => x.Id == id);
         if (existToken != null)
         {
             existToken.Token = token;

@@ -16,8 +16,9 @@ global using Automation.Infrastructure.Extensions;
 global using Microsoft.AspNetCore.Identity;
 global using Automation.Domain.Dtos.Request;
 
-
-
+global using Microsoft.OpenApi.Models;
+global using Swashbuckle.AspNetCore.SwaggerUI;
+global using Microsoft.AspNetCore.Authorization;
 
 
 

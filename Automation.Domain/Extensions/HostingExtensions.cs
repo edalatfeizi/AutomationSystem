@@ -8,6 +8,8 @@ public static class HostingExtensions
         services.AddScoped<IDepartmentService, DepartmentService>();
         services.AddScoped<IEmployeeService, EmployeeService>();
         services.AddScoped<IAccountService, AccountService>();
+        services.AddScoped<IFileService, FileService>();
+        services.AddScoped<IAttachmentService, AttachmentService>();
 
         return services;
     }

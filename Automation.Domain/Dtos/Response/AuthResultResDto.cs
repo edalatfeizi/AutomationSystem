@@ -1,7 +1,7 @@
 ﻿
 namespace Automation.Domain.Dtos.Response;
 
-public class AuthResultResDto
+public record AuthResultResDto
 {
     public string Token { get; set; }
     public string RefreshToken { get; set; }
