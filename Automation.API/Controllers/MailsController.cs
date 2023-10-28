@@ -1,4 +1,6 @@
 ﻿
+using Automation.Domain.Enums;
+
 namespace Automation.API.Controllers;
 
 [Route("api/v1/[controller]")]
@@ -57,7 +59,14 @@ public class MailsController : ControllerBase
         var result = await _mailService.AddMailAsync(dto);
         return Ok(result);
     }
-
+    [HttpPost("updatestatus")]
+    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+    [ProducesResponseType(typeof(ApiResponse<MailResDto>), (int)HttpStatusCode.OK)]
+    public async Task<IActionResult> UpdateMailStatusAsync([FromQuery] Guid mailId,[FromQuery] MailStatus mailStatus)
+    {
+        var result = await _mailService.UpdateMailStatusAsync(mailId, mailStatus);
+        return Ok(result);
+    }
     [HttpPost("attachfile")]
     [ProducesResponseType((int)HttpStatusCode.BadRequest)]
     [ProducesResponseType(typeof(ApiResponse<List<AttachmentResDto>>), (int)HttpStatusCode.OK)]

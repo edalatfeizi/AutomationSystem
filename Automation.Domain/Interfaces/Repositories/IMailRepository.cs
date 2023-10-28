@@ -10,4 +10,6 @@ public interface IMailRepository
                                 string? subject = null, string? body = null, MailImediacyType? mailImediacyType = null, MailClassificationType? mailClassificationType = null,
                                 MailStatus? mailStatus = null, MailType? mailType = null, DateTime? fromDate = null, DateTime? toDate = null);
     Task<int> GetLastMailNumberAsync();
+    Task<bool> UpdateMailStatusAsync(Guid mailId, MailStatus mailStatus);
+
 }

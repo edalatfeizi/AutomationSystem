@@ -60,7 +60,7 @@ public class MailRepository : IMailRepository
             query = query.Where(x => x.CreatedOn >= fromDate);
 
         if (toDate != null)
-            query = query.Where(x => x.CreatedOn <= fromDate);
+            query = query.Where(x => x.CreatedOn <= toDate);
 
         query = query.Where(x => x.IsDeleted == false);
 
@@ -80,5 +80,13 @@ public class MailRepository : IMailRepository
     {
         var lastMail = await _context.Mails.OrderByDescending(x => x.MailNumber).FirstOrDefaultAsync();
         return lastMail != null ? lastMail.MailNumber : 0;
+    }
+
+    public async Task<bool> UpdateMailStatusAsync(Guid mailId, MailStatus mailStatus)
+    {
+        var mail = await _context.Mails.SingleAsync(x => x.Id == mailId);
+        mail.MailStatus = mailStatus;
+        await _context.SaveChangesAsync();
+        return true;
     }
 }

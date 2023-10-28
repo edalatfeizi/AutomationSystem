@@ -7,4 +7,5 @@ public interface IMailService
     Task<ApiResponse<bool>> DeleteMailAsync(Guid mailId, Guid deletedByUserId);
     Task<ApiResponse<MailResDto?>> GetMailByIdAsync(Guid mailId);
     Task<ApiResponse<List<MailResDto>>> FilterMailsAsync(FilterMailsReqDto dto);
+    Task<ApiResponse<bool>> UpdateMailStatusAsync(Guid mailId, MailStatus mailStatus);
 }

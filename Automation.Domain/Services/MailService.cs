@@ -40,6 +40,10 @@ public class MailService : IMailService
         };
 
         var result = await _mailRepository.AddMailAsync(mail);
+
+        //if(mail.MailType == MailType.OutComing)
+            //send email through SMTP protocol 
+
         var mailResponse = GetMailResponse(result);
 
         return new ApiResponse<MailResDto>(mailResponse);
@@ -73,6 +77,11 @@ public class MailService : IMailService
         return new ApiResponse<MailResDto?>(result);
     }
 
+    public async Task<ApiResponse<bool>> UpdateMailStatusAsync(Guid mailId, MailStatus mailStatus)
+    {
+        var result = await _mailRepository.UpdateMailStatusAsync(mailId, mailStatus);
+        return new ApiResponse<bool>(result);
+    }
 
     private MailResDto GetMailResponse(Mail mail)
     {
