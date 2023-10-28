@@ -1,7 +1,7 @@
 ﻿
-namespace Automation.Domain.Entities;
+namespace Automation.Domain.Dtos.Response;
 
-public class Mail
+public record MailResDto
 {
     public Guid Id { get; set; }
     public int MailNumber { get; set; }
@@ -13,16 +13,10 @@ public class Mail
     public MailClassificationType ClassificationType { get; set; }
     public MailStatus MailStatus { get; set; }
     public MailType MailType { get; set; }
-
-    [ForeignKey("RepliedToMail")]
     public Guid? RepliedTo { get; set; }
-    public Mail? RepliedToMail { get; set; }
-
-    [ForeignKey("ForwardedFromMail")]
     public Guid? ForwardedFrom { get; set; }
-    public Mail? ForwardedFromMail { get; set; }
     public string Description { get; set; }
-    public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
-    public bool IsDeleted { get; set; } = false;
-    public string DeletedBy { get; set; } = string.Empty;
+    public DateTime CreatedOn { get; set; }
+    public bool IsDeleted { get; set; } 
+    public string DeletedBy { get; set; }
 }

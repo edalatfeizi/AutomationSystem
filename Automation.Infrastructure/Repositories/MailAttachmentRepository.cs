@@ -18,9 +18,9 @@ public class MailAttachmentRepository : IMailAttachmentRepository
         return mailAttachment;
     }
 
-    public async Task<MailAttachment?> GetByMailIdAsync(Guid id)
+    public async Task<List<MailAttachment>> GetByMailIdAsync(Guid id)
     {
-        var mailAttachment = await _context.MailAttachments.FindAsync(id);
-        return mailAttachment;
+        var mailAttachments = await _context.MailAttachments.Where(x => x.MailId == id).ToListAsync();
+        return mailAttachments;
     }
 }

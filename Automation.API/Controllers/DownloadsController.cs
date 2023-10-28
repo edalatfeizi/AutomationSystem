@@ -1,12 +1,13 @@
 ﻿
 namespace Automation.API.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/v1/[controller]")]
 [ApiController]
-public class DownloadController : ControllerBase
+[Authorize]
+public class DownloadsController : ControllerBase
 {
     private readonly IFileService _fileService;
-    public DownloadController(IFileService fileService)
+    public DownloadsController(IFileService fileService)
     {
 
         _fileService = fileService;
@@ -14,7 +15,6 @@ public class DownloadController : ControllerBase
     }
 
     [HttpGet("download")]
-    [Authorize]
     public async Task<IActionResult> DownloadAsync(string fileName)
     {
         var result = await _fileService.DownloadFileAsync(fileName);

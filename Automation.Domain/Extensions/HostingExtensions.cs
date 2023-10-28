@@ -9,7 +9,9 @@ public static class HostingExtensions
         services.AddScoped<IEmployeeService, EmployeeService>();
         services.AddScoped<IAccountService, AccountService>();
         services.AddScoped<IFileService, FileService>();
+        services.AddScoped<IMailService, MailService>();
         services.AddScoped<IAttachmentService, AttachmentService>();
+        services.AddScoped<IMailAttachmentService, MailAttachmentService>();
 
         return services;
     }

@@ -141,4 +141,7 @@
   <data name="InvalidTokens" xml:space="preserve">
     <value>Invalid tokens.</value>
   </data>
+  <data name="MailNotFound" xml:space="preserve">
+    <value>Mail not found.</value>
+  </data>
 </root>

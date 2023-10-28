@@ -131,5 +131,14 @@ namespace Automation.Domain.Resources {
                 return ResourceManager.GetString("InvalidTokens", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mail not found..
+        /// </summary>
+        internal static string MailNotFound {
+            get {
+                return ResourceManager.GetString("MailNotFound", resourceCulture);
+            }
+        }
     }
 }
