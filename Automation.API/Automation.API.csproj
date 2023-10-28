@@ -22,4 +22,8 @@
     <ProjectReference Include="..\Automation.Infrastructure\Automation.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Uploads\StaticContent\" />
+  </ItemGroup>
+
 </Project>
