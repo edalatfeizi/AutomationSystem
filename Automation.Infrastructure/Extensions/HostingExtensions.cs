@@ -10,6 +10,15 @@ public static class HostingExtensions
             options.UseSqlServer(connectionString);
         });
 
+        services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+        services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+        services.AddScoped<IEmployeeDepartmentRepository, EmployeeDepartmentRepository>();
+        services.AddScoped<IAccountRepository, AccountRepository>();
+        services.AddScoped<IFileRepository, FileRepository>();
+        services.AddScoped<IAttachmentRepository, AttachmentRepository>();
+        services.AddScoped<IMailRepository, MailRepository>();
+        services.AddScoped<IMailAttachmentRepository, MailAttachmentRepository>();
+
         return services;
     }
 }

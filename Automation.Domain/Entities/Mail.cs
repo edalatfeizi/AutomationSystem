@@ -21,7 +21,8 @@ public class Mail
     [ForeignKey("ForwardedFromMail")]
     public Guid? ForwardedFrom { get; set; }
     public Mail? ForwardedFromMail { get; set; }
-
     public string Description { get; set; }
     public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+    public bool IsDeleted { get; set; } = false;
+    public string DeletedBy { get; set; } = string.Empty;
 }
